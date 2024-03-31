@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Comaptible" content="   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Selector basic</title>
+    <style>
+        /* 전체선택자 =* */
+        /* * {
+            color: red;
+            background-color: pink;
+        } */
+        /*type 선택자 = 태그를 선택 p */
+        h2{
+            color: green;    
+            font-weight: 800;
+        }
+        p{
+            color: red;
+            background-color: pink;
+            text-align: center;
+        }
+        /* class 선택자 = 여러 요소 선택가능 (중복가능)*/
+        .f_text{
+            color:blue;
+            font-weight: 700;
+        }
+        .l_text{
+            color:orange;
+            font-weight: 700;  
+        }
+        /* id 선택자 = 중복 불가능, 하나의 요소만 선택가능 */
+        #korea{
+            color:crimson;
+            background-color:antiquewhite;
+        }
+
+    </style>
+</head>
+<body>
+<h1 id="korea">애국가</h1>
+<h2>1절</h2>
+<p>
+동해 물과 <span class="f_text">백두산이</span><br>
+마르고 닳도록<br>
+하느님이 보우하사<br>
+<span class="l_text">우리나라</span> 만세<br>
+</p><br>
+
+<h2>2절</h2>
+<p>
+남산 위에 저 <span class="f_text">소나무</span><br>
+철갑을 두른 듯<br>
+바람 서리 불변함은<br>
+우리 <span class="l_text">기상일세</span> <br>
+</p><br>
+
+<h2>3절</h2>
+<p>
+가을 하늘 공활한데<br>
+높고 <span class="f_text">구름</span> 없이<br> 
+<span class="l_text">밝은 달은</span> 우리 가슴<br> 
+일편 단심일세<br> 
+</p><br>
+
+<h2>4절</h2>
+<p>
+이 기상과 이 맘으로<br> 
+<span class="f_text">충성을</span> 다하여<br> 
+괴로우나 즐거우나<br>
+나라 <span class="l_text">사랑하세</span><br>
+</p><br>
+
+<h2>후렴</h2>
+<p>
+<span class="f_text">무궁화 삼천리</span><br> 
+화려강산<br> 
+대한 사람 <span class="l_text">대한으로</span><br> 
+길이 보전하세<br>
+</p><br>
+
+</body>
+</html>
