@@ -1,0 +1,14 @@
+header {
+    position: relative; /* 부모 요소를 relative로 설정하여 자식 요소의 위치를 조정 */
+    flex-direction: column;
+  }
+  .container1 {
+    position: fixed; /* container1을 고정된 위치로 설정 */
+    top: 0; /* 화면 상단에 위치 */
+    right: 10%; /* 화면 오른쪽에 위치 */
+    background-color: white; /* 배경색 설정 */
+    padding: 10px; /* 내부 여백 설정 */
+    display: flex; /* 요소들을 가로로 배열하기 위해 flex 속성 추가 */
+    align-items: center; /* 요소들을 수직 가운데 정렬 */
+    justify-content: space-between; /* 요소들을 헤더 안에서 최대한 가로로 펼쳐 배치 */
+  }
