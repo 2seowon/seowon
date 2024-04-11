@@ -1,4 +1,4 @@
-var studentScore = 72;
+var studentScore = 70;
 var letterGrade = "";
 
 
@@ -14,5 +14,4 @@ if (studentScore >= 90) {
 } else if (studentScore < 40) {
     letterGrade = "F";
 } 
-console.log("학생의 점수는 ", studentScore, 
-    "점이고, 레터 그레이드는 ", letterGrade, "입니다.");
+console.log("학생의 점수는 ", studentScore, "점이고, 레터 그레이드는 ", letterGrade, "입니다.");
