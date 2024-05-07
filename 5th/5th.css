@@ -1,13 +1,12 @@
-* {
+S* {
   box-sizing: border-box;
-  display: flexbox;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: "Noto Sans KR", sans-serif;
 }
-
 
 a:link,
 a:visited {
@@ -18,70 +17,203 @@ a:visited {
 /* header */
 
 .container {
-  height: 90px;
-  padding: 10px;
-  background-color: white;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-right: 10px;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
 }
-.container > * {
-  margin-right: 10px; /* 요소들 사이의 간격 조절 */
+
+.language-select {
+  margin-right: 20px; 
+  font-size: larger;
 }
 
 .button {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+  list-style-type: none; /* 리스트 마커 제거 */
 }
 
-.button>li{
-  margin-right: 10px; /* 리스트 아이템 사이의 간격 조절을 위해 추가 */
-  font-weight: bold;
+.button li {
+  display: inline-block; /* 인라인 레벨로 배치 */
+  margin-right: 20px; /* 각 버튼 사이 간격 */
 }
+
+.button li:first-child {
+  margin-left: 0; /* 첫 번째 버튼의 왼쪽 간격 초기화 */
+}
+
+.button li a {
+  text-decoration: none; /* 링크 텍스트에 밑줄 제거 */
+  font-size: larger;
+}
+
 
 /* nav */
-.navbar{
-  width:100%;
-  height: 80px;
-  margin:0;
-  position:relative;
+
+nav *{
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  margin-bottom: 0;
 }
 
-.logo{
-  flex:1;
-  padding: 0 0 0  30px
-  line-height:2.75;
-  margin: left 20px;
+.navbar {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 50px;
 }
 
-.menu{
+.menu {
+  list-style-type: none;
+  padding: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.menu>li {
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: larger;  
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.
+
+/* main-banner */
+
+.section input[id="slide"] {display:none;}
+.section{
+  display: flex;
+  margin-top: 0;
+}
+
+	/* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+.section .slidewrap {max-width: 80%; /* 최대 너비를 원하는 크기로 설정하세요 */
+  margin:0 auto;
+  overflow: hidden; 
+  justify-content: center;
+  max-height:400px;
+}
+.section .slidelist {white-space:nowrap;font-size:0;}
+.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+.section .slidelist > li > a {display:block;position:relative;}
+.section .slidelist > li > a img {width:100%; height: auto; max-height: 400px;}
+
+/* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+.section .slidelist label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+.section .slidelist .left {left:30px;background:url('left.png') center center / 100% no-repeat;}
+.section .slidelist .right {right:30px;background:url('right.png') center center / 100% no-repeat;}
+
+/* INPUT 체크되면 변화값이 li까지 전달되는 스타일 */
+.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+	
+/* message */
+.message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.message.word{
+  font-weight: bold;
+  justify-self: center;
+}
+
+/* search bar */
+
+.serachbar{
   display: flex;
   justify-content: center;
 }
-.menu>li{
-  margin: 0 15px
-  fontweight:bold;
+.input-text{
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+  display: inline;
+  height: 76.8px;
+  width: 651.400px;
+  border: 1px solid #ccc; 
+  background-color: #F4F5F8;
+  border-radius: 5px; 
+  padding: 24px;
+  padding-bottom: 16px;
+}
+::placeholder {
+  font-size: 20px;
+  text-align: left;
+  align-items: center;
+}
+div.search-button{
+      width: 76.8px;
+      background-color: #003876; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5PX; 
+}
+
+button.submit-button{
+  width: 76.8px;
+  height: 76.8px; 
+  background-color: #003876; 
+  color: #F4F5F8;
+  border-radius: 5PX; 
 }
 
 
-/* main-banner */
-.banner {
-  width: 100%; /* 부모 요소에 꽉 차게 설정 */
-  height: 400px; /* 배너의 높이를 조절하여 크기를 설정합니다. */
-}
+/* titleArea  */
 
-.banner img {
-  width: 100%; /* 이미지를 부모 요소에 꽉 차게 설정 */
-  height: 100%; /* 이미지를 부모 요소에 꽉 차게 설정 */
-  object-fit: cover; /* 이미지가 잘리지 않고 부모 요소에 맞게 설정 */
+.tilte{
+  display: flex;
+  align-items: center;
+justify-content: center;
 }
 
 
+/* lectureImg */
+
+.lectureArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  margin-right: 30px;
+}
+
+.lectureImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 30px; /* 이미지 간 간격 조정 */
+  margin-left:30px;
+}
+
+.lectureImg > img {
+  margin-bottom: 10px; /* 이미지와 설명 사이 간격 */
+  border-radius: 30px; /* 이미지에 border-radius 효과 적용 */
+}
+
+.lectureImg > p {
+  margin-right: 30px; /* 이미지 설명 간격 조정 */
+  flex: 0 0 auto;
+}
+
+.free{
+  font-weight: bold;
+  font-size: larger;
+  text-color:blue;
+}
 
 
 
