@@ -8,6 +8,7 @@ const Homework = () => {
     "교육세션 끝",
     "리액트 재밌으신가요?",
   ]);
+  const [editingIndex, setEditingIndex] = usestate(-1);
 
   const handleNewComment = () => {
     if (inputText.trim() !== "") {
@@ -23,6 +24,22 @@ const Homework = () => {
       setComments(newComments);
     
   };
+
+
+  const handleStartEdit = (index) =>{
+    setEditingIndex(index);
+    setInputText(comments[index]);
+  };
+
+  const handleFinishEdit= (index,newText) => {
+    if (newText.trim() !== "") {
+      const newComments = [...comments];
+      newComments[index] = newText;
+      setComments(newComments);
+      setEditingIndex(-1); // 수정 완료 후 수정 중인 댓글 인덱스 초기화
+    }
+  };
+  
 
   return (
     <>
@@ -46,6 +63,8 @@ const Homework = () => {
         {comments.map((item, idx) => (
           <div key={idx} className="comments">
             <p>{item}</p>
+            <button onClick={()=> handleFinishEdit(idx)}>수정</button>
+            <button onClick={()=> handleStartEdit (idx)}>수정</button>
             <button onClick={() => handleDeleteComment(idx)}>삭제</button>
           </div>
         ))}
